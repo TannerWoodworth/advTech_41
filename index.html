@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Canvas Basics</title>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600">Sorry your browser sucks. </canvas>
+    <script>
+        var myCanvas = document.getElementById("myCanvas");
+        // make an object for it's context
+        var ctx = myCanvas.getContext("2d")
+        // make a rectangle
+        // fillRect(starting x position, starting Y, width, height)
+        ctx.fillRect(20, 10, 100, 80);
+        // make a rectangular stroke
+        ctx.strokeStyle = '#acc';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(20, 10, 100, 80);
+        
+        //start a line
+        ctx.beginPath();
+        ctx.moveTo(240, 80);
+        // lineTo makes the pen but makes a line to the new coordinate
+        ctx.lineTo(300, 20);
+        ctx.lineTo(200, 40);
+        // draw an arc (center-x, center-y, radius, startAngle, endAngle )
+        ctx.arc(300, 300, 100, 145, Math.PI*.5, true)
+        //makes the stroke appear
+        ctx.stroke();
+    </script>
+</body>
+</html>
